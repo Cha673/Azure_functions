@@ -1,44 +1,38 @@
-# Dépendances Node.js (réinstallées via `npm install`)
+# --- Dépendances Node.js (réinstallées via `npm install`) ---
 node_modules/
-.npm/
 
-# Build / packaging
-dist/
+# --- Azure Functions ---
+# Paramètres locaux : peuvent contenir des secrets / chaînes de connexion.
+# Un modèle versionné est fourni : local.settings.example.json
+local.settings.json
+bin/
+obj/
 *.zip
 
-# Paramètres locaux Azure Functions (contiennent des secrets / chaînes de connexion)
-# -> un modèle versionné est fourni : local.settings.example.json
-local.settings.json
-
-# Variables d'environnement
-.env
-.env.*
-!.env.example
-
-# Logs
-logs/
-*.log
-npm-debug.log*
-
-# Azurite (émulateur de stockage local)
+# --- Azurite (émulateur de stockage local) ---
 .azurite/
 __blobstorage__/
 __queuestorage__/
 __tablestorage__/
-__azurite_db*__.json
-AzuriteConfig
+__azurite_db_*__.json
 
-# Tests / couverture
+# --- Variables d'environnement ---
+.env
+.env.*
+!.env.example
+
+# --- Logs ---
+*.log
+
+# --- Tests / couverture ---
 coverage/
-TestResults/
 
-# Éditeurs (on garde uniquement les recommandations d'extensions VS Code)
+# --- Éditeurs (seules les recommandations d'extensions VS Code sont versionnées) ---
 .vscode/*
 !.vscode/extensions.json
 .idea/
-*.swp
 
-# Fichiers système
+# --- Fichiers système ---
 .DS_Store
 Thumbs.db
 desktop.ini
